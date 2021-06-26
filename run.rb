@@ -1,3 +1,3 @@
-require './lib/bot/ttsbot.rb'
+require './lib/bot/ttslogger.rb'
 
 TtsLogger.new.listen

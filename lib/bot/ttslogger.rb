@@ -27,11 +27,11 @@ class TtsLogger
 
   def parse_message(event)
     [  
-      "\"#{event.message.channel.name}\"",
+      event.message.channel.name.dump,
       event.message.id,
       event.message.user.id,
-      "\"#{event.message.content}\"",
-      "\"#{Time.now.strftime('%Y-%m-%d %H:%M:%S')}\""
+      event.message.content.dump,
+      Time.now.strftime('%Y-%m-%d %H:%M:%S').dump
     ].join(', ')
   end
 end
