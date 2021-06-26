@@ -1,13 +1,13 @@
 require 'discordrb'
 require './lib/db.rb'
 
-ENV = Dotenv.load('./.env').freeze
-BOT_TOKEN = ENV['BOT_TOKEN'].freeze
-BOT_CLIENT = ENV['BOT_CLIENT'].freeze
-INSERT_COLS = "channel_name, message_id, user_id, content, timestamp"
-TABLE = 'message'
 
-class TtsBot
+class TtsLogger
+  Dotenv.load
+  BOT_TOKEN = ENV['BOT_TOKEN'].freeze
+  INSERT_COLS = "channel_name, message_id, user_id, content, timestamp"
+  TABLE = 'message'
+
   def initialize
     @bot = Discordrb::Bot.new token: BOT_TOKEN, client_id: ''
   end

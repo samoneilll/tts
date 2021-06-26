@@ -2,7 +2,7 @@ require 'dotenv'
 require 'mysql2'
 
 class TtsDb
-  ENV = Dotenv.load('./.env').freeze
+  Dotenv.load
   DB_HOST = "#{ENV['CONTAINER_NAME']}-db".freeze
   DB_PASS = ENV['MYSQL_PASSWORD'].freeze
   DB_USER = 'root'.freeze
